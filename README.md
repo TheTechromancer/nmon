@@ -1,6 +1,6 @@
 # nmon
 
-A script which monitors, detects, and records changes in the network, such as new hosts or new open ports. Includes the option to run a custom script/program on hosts which have changed.
+A script which monitors, detects, and records additions to network(s), such as new hosts or new open ports. Includes the option to run a custom script/program on new or changed hosts.
 
 Run as often as necessary (for example, every hour on a cron job).  Nmon will inspect the network, compare to existing database, record changes, and then exit.
 
@@ -30,27 +30,56 @@ Run as often as necessary (for example, every hour on a cron job).  Nmon will in
 
 
 #### Example:
+Simply run nmon and view the log to see additions to the network.  (target defaults to local subnet if none is specified)
 
 ~~~~
-
-# ./nmon.py
-[+] Loading database /home/groot/.cache/nmon/10.20.0.0-24/db
+# ./nmon.py 
+[+] Loading database /root/.cache/nmon/10.0.0.0-24/db
 [+] No existing database found - starting fresh
-[+] Running Nmap scan: "nmap 10.20.0.0/24"
-[+] Saved 4 new host(s) and 3 new port(s)
+[+] Running Nmap scan: "nmap 10.0.0.0/24"
+[+] Saved 3 new host(s) and 1 new open port(s)
 
-# ./nmon.py -l
+
+# ./nmon.py 
+[+] Loading database /root/.cache/nmon/10.0.0.0-24/db
+[+] Running Nmap scan: "nmap 10.0.0.0/24"
+[+] Saved 1 new host(s) and 2 new open port(s)
+
+# ./nmon.py --log
+[Mon Mar 19 22:11:10 2018] New host on network:
+
 10.0.0.1
+ 00:0C:29:45:30:AF (VMware)
   PORTS
    22
 
+
+[Mon Mar 19 22:11:10 2018] New host on network:
+
+10.0.0.200
+ F0:9F:C2:64:50:22 (Ubiquiti Networks)
+
+
+[Mon Mar 19 22:11:10 2018] New host on network:
+
+10.0.0.116
+ 0E:B4:B2:7E:A4:12
+
+
+[Mon Mar 19 22:11:36 2018] New host on network:
+
 10.0.0.115
+ 0E:B4:40:FE:A3:86
   PORTS
    22
    443
 
-10.0.0.116
-
-10.0.0.200
-
+[+] Log can be found at /root/.cache/nmon/10.0.0.0-24/log
 ~~~~
+
+#### Tips:
+
+<ul>
+    <li>Use the '-r' option to run a custom script/program on new or changed hosts.  For example:
+    `nmon.py -r 'nmap -A'` or `nmon.py -r enum4linux`</li>
+</ul>
