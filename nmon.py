@@ -85,7 +85,7 @@ class NetworkMonitor():
 
         self.save()
         if self.new_hosts or self.new_ports:
-            print('[+] Saved {} new host(s) and {} new port(s)'.format(self.new_hosts, self.new_ports))
+            print('[+] Saved {} new host(s) and {} new open port(s)'.format(self.new_hosts, self.new_ports))
         else:
             print('[+] No network changes detected')
 
@@ -115,7 +115,7 @@ class NetworkMonitor():
             try:
                 self.load()
             except FileNotFoundError:
-                sys.stderr.write('[!] Cannot find {}'.format(self.db))
+                sys.stderr.write('[!] Cannot find {}\n'.format(self.db))
                 sys.exit(1)
 
         for host in self.map.values():
