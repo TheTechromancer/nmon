@@ -81,5 +81,11 @@ Simply run nmon and view the log to see additions to the network.  (target defau
 
 <ul>
     <li>Use the '-r' option to run a custom script/program on new or changed hosts.  For example:
-    ```nmon.py -r 'nmap -A'``` or ```nmon.py -r enum4linux```</li>
+```
+nmon.py -r 'nmap -A'
+``` or 
+```
+nmon.py -r enum4linux
+```
+</li>
 </ul>
