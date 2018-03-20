@@ -79,5 +79,5 @@ Simply run nmon and view the log to see additions to the network.  (target defau
 
 #### Tips:
 
-* Use the '-r' option to run a custom script/program on new or changed hosts.  For example:
-    `nmon.py -r 'nmap -A'` or `nmon.py -r enum4linux`
+* Use the '-r' option to run a custom script/program on new or changed hosts.  For example:<br> `nmon.py -r 'nmap -A'` or `nmon.py -r enum4linux`
+* To start fresh, delete the cache for the current target with `-d`
