@@ -377,7 +377,7 @@ if __name__ == '__main__':
 
     ### ARGUMENTS ###
 
-    parser = ArgumentParser(description="Monitors and logs network changes")
+    parser = ArgumentParser(description="Monitors and logs additions to network(s)")
 
     parser.add_argument('-t', '--target',   default=get_subnets(),      help="target hosts or subnets (comma-separated)")
     parser.add_argument('-s', '--savedir',  type=Path,                  help="directory in which to save log file, etc.")
