@@ -32,13 +32,13 @@ Run as often as necessary (for example, every hour on a cron job).  Nmon will in
 
 ~~~~
 
-\# ./nmon.py
+# ./nmon.py
 [+] Loading database /home/groot/.cache/nmon/10.20.0.0-24/db
 [+] No existing database found - starting fresh
 [+] Running Nmap scan: "nmap 10.20.0.0/24"
 [+] Saved 4 new host(s) and 3 new port(s)
 
-\# ./nmon.py -l
+# ./nmon.py -l
 10.0.0.1
   PORTS
    22
