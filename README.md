@@ -12,7 +12,7 @@ Run as often as necessary (for example, every hour on a cron job).  Nmon will in
     usage: nmon.py [-h] [-t TARGET] [-s SAVEDIR] [-d] [-r RUN] [-l] [--log]
                    [--debug]
 
-    Monitors and logs network changes                                                            
+    Monitors and logs additions to network(s)                                                          
                                                                                                  
     optional arguments:                                                                          
       -h, --help            show this help message and exit                                      
